@@ -1,0 +1,69 @@
+% preamble.tex
+
+% ----------------------------------------* DOCUMENT DEFINITION
+\documentclass[11pt]{article}
+\usepackage[margin=1.0in]{geometry}
+
+
+% ----------------------------------------* MATHEMATICS
+\usepackage{amsmath}	% Expanded math operations for papers
+\usepackage{amssymb}	% Expanded math symbols and notations
+\usepackage{esvect}		% Vector notation for mathematics
+
+
+% ----------------------------------------* FORMATTING PACKAGES
+\usepackage{ragged2e}	% Additional typeset environments
+\usepackage{hyperref}	% Enable hyperlink support
+\usepackage{titlesec}	% Allow customization of section headers
+\usepackage{listings}	% Formats code using the lstlisting environment
+\usepackage{wrapfig}	% So I can wrap figures around my text
+\usepackage{enumitem}	% Align things in the itemize environment
+
+% Todo notes support
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+% Figure caption support
+\usepackage[labelfont=bf, skip=2pt]{caption}
+
+
+% ----------------------------------------* MISCELLANEOUS
+\usepackage{lipsum}		% Generate lorem ipsum dummy text
+\usepackage{xargs}		% Define complex custom commands
+
+
+% ----------------------------------------* SETTINGS
+
+% Set graphics path
+\graphicspath{ {figures/} }
+
+
+% ----------------------------------------* FORMAT DEFINITIONS
+
+% Define specific note formats
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\explain}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+
+% Define section formats
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\S\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itseries}{\S\thesubsubsection}{1em}{}
+
+% Define hyperlink behavior
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% Force longer URLs to wrap-around
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+  \do\Y\do\Z}
+
+
